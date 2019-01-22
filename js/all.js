@@ -4,11 +4,56 @@ window.onresize = function () {
    document.querySelector('.head').style.height = window.innerHeight + "px"
 }
 
-var changenumber = document.querySelectorAll('.arealist');
-console.log(changenumber[1].value);
+// Get Data
+var record;
+var url = "https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97";
+
+record.onreadystatechange = function () {
+   if (this.readyState == 4 && this.status == 200) {
+      var myArr = JSON.parse(this.responseText);
+      myFunction(myArr);
+   };
+   record.open("GET", url, true);
+   record.send();
+
+   
+
+   function myFunction(arr) {
+      var out = "";
+      for (var i = 0; i < arr.length; i++) {
+         out += '<a href="' + arr[i].url + '">' +
+            arr[i].display + '</a><br>';
+      }
+      document.getElementById("id01").innerHTML = out;
+   }
+}
+console.log(arr);
+
 // Dropdown List
 var selector = document.querySelector('#selector');
+
+// 
+var alldata = [];
+for (var i = 0; i <= records.length; i = i + 1) {
+   alldata.push(records[i].Zone);
+}
+var areadata = [];
+alldata.forEach(function (value) {
+   if (areadata.indexOf(value) == -1) {
+      areadata.push(value);
+   }
+});
+for (var i = 0; i <= alldata.length; i++) {
+   let selectordata = document.createElement('option');
+   selectordata.setAttribute('value', alldata[i]);
+   selectordata.textContent = alldata[i];
+   selector.appendChild(selectordata);
+}
+
+// Dropdown List:Display what I choose
 selector.addEventListener('change', function (event) {
+
+   // Pick and Display.
    var target = event.target.value;
    var number = records.length;
    document.querySelector('.status').textContent = target;
