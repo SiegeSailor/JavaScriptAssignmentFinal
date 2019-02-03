@@ -14,23 +14,29 @@ var record = new XMLHttpRequest();
 record.open('get',url,true);
 record.send(null);
 record.onload = function() {
+   // Convert the data into Object
    var string = JSON.parse(record.responseText);
-   var filterstring = string.filter(function(element, index, arr){
-      return arr.indexOf(element) === index;
-   });
-   const string = string.filter();
-   console.log(filterstring);
-   const result = words.filter(word => word.length > 6);
+   var arraystring = [];
 
-   for (var i =0;i<=string.result.records.length;i=i+1) {
+   // Pick the zones out into an Array
+   for (var i=0;i<string.result.records.length;i=i+1) {
+      arraystring.push(string.result.records[i].Zone);
+   }
+
+   // Filter the same zones
+   resultstring = arraystring.filter(function(item, index, self) {
+      return self.indexOf(item) == index;
+   });
+
+   // Add the zones onto the Dropdown list
+   for (var i =0;i<resultstring.length;i=i+1) {
       var recordlist = document.createElement('option');
       recordlist.setAttribute('class','arealist');
-      recordlist.setAttribute('value',string.result.records[i].Zone);
-      recordlist.textContent = string.result.records[i].Zone;
+      recordlist.setAttribute('value',resultstring[i]);
+      recordlist.textContent = resultstring[i];
       selector.appendChild(recordlist);
    }
 }
-
 
 // Dropdown List:Display what I choose
 selector.addEventListener('change', function (event) {
@@ -43,7 +49,7 @@ selector.addEventListener('change', function (event) {
    // Pick the space to put the spots.
    var board = document.querySelector('.content');
 
-   for (var i = 0; i <= number; i = i + 1) {
+   for (var i = 0; i < number; i = i + 1) {
       if (target == records[i].Zone) {
          // Creat Container and append it to Board.
          var chosencontainer = document.createElement('div');

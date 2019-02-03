@@ -149,18 +149,21 @@ html, body, * {
   .head .scroll {
     position: absolute;
     bottom: 20px;
-    padding: 0.1px;
+    padding: 0.5px;
     width: 80%;
     right: 0;
     left: 0;
     margin: auto;
     border-collapse: collapse;
-    border: 1px dashed transparent;
-    background: -webkit-gradient(linear, left top, left bottom, from(white), to(white)) padding-box, repeating-linear-gradient(-45deg, #559AC8 0, #559AC8 0.25em, white 0, white 0.75em);
-    background: -webkit-linear-gradient(white, white) padding-box, -webkit-repeating-linear-gradient(135deg, #559AC8 0, #559AC8 0.25em, white 0, white 0.75em);
-    background: -o-linear-gradient(white, white) padding-box, -o-repeating-linear-gradient(135deg, #559AC8 0, #559AC8 0.25em, white 0, white 0.75em);
-    background: linear-gradient(white, white) padding-box, repeating-linear-gradient(-45deg, #559AC8 0, #559AC8 0.25em, white 0, white 0.75em); }
+    border-bottom: 2.5px dashed transparent;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f8f8ff), to(#f8f8ff)) padding-box, repeating-linear-gradient(-45deg, #559AC8 0, #559AC8 0.25em, #f8f8ff 0, #f8f8ff 0.75em);
+    background: -webkit-linear-gradient(#f8f8ff, #f8f8ff) padding-box, -webkit-repeating-linear-gradient(135deg, #559AC8 0, #559AC8 0.25em, #f8f8ff 0, #f8f8ff 0.75em);
+    background: -o-linear-gradient(#f8f8ff, #f8f8ff) padding-box, -o-repeating-linear-gradient(135deg, #559AC8 0, #559AC8 0.25em, #f8f8ff 0, #f8f8ff 0.75em);
+    background: linear-gradient(#f8f8ff, #f8f8ff) padding-box, repeating-linear-gradient(-45deg, #559AC8 0, #559AC8 0.25em, #f8f8ff 0, #f8f8ff 0.75em); }
   .head .scroll-down {
+    background-image: url("../img/icons_down.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
     border: 2px solid #559AC8;
     background-color: ghostwhite;
     border-radius: 50%;

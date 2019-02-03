@@ -122,21 +122,21 @@ html,body,* {
     .scroll {
         position: absolute;
         bottom: 20px;
-        padding: 0.1px;
+        padding: 0.5px;
         width:80%;
         right:0;
         left:0;
         margin:auto;
         // The following border solution is from https://juejin.im/post/5954cc43f265da6c2f0a970f
         border-collapse: collapse;
-        border: 1px dashed transparent;
-        background: linear-gradient(white,white) padding-box,
-        repeating-linear-gradient(-45deg,$accent 0, $accent 0.25em,white 0,white 0.75em);
+        border-bottom: 2.5px dashed transparent;
+        background: linear-gradient(#f8f8ff,#f8f8ff) padding-box,
+        repeating-linear-gradient(-45deg,$accent 0, $accent 0.25em,#f8f8ff 0,#f8f8ff 0.75em);
     }
     .scroll-down {
-        // background-image: url("../img/icons_down.png");
-        // background-repeat: no-repeat;
-        // background-position: 50% 50%;
+        background-image: url("../img/icons_down.png");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
         border:2px solid $accent;
         background-color:ghostwhite;
         border-radius: 50%;
